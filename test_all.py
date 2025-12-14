@@ -17,7 +17,7 @@ def cleanup_files(files):
 
 def test_basic_operations():
     """Тест 1: Базовые операции"""
-    print("✓ Тест 1: Базовые операции")
+    print("Тест 1: Базовые операции")
     
     data = [
         [1, "Alice", 25, "2023-01-15"],
@@ -44,7 +44,7 @@ def test_basic_operations():
 
 def test_types_and_none():
     """Тест 2: Типы данных и None"""
-    print("✓ Тест 2: Типы данных и None")
+    print("Тест 2: Типы данных и None")
     
     data = [
         [1, "Text", "25", "true", "2023-01-01"],
@@ -75,7 +75,7 @@ def test_types_and_none():
 
 def test_file_operations():
     """Тест 3: Работа с файлами"""
-    print("✓ Тест 3: Работа с файлами")
+    print("Тест 3: Работа с файлами")
     
     # Создаем временные файлы
     temp_files = []
@@ -117,7 +117,7 @@ def test_file_operations():
 
 def test_multiple_files():
     """Тест 4: Множественные файлы"""
-    print("✓ Тест 4: Множественные файлы")
+    print("Тест 4: Множественные файлы")
     
     # Создаем 2 CSV файла
     import csv
@@ -152,47 +152,47 @@ def test_multiple_files():
 
 def test_exceptions():
     """Тест 5: Исключительные ситуации"""
-    print("✓ Тест 5: Исключительные ситуации")
+    print("Тест 5: Исключительные ситуации")
     
     table = Table([[1, 2]], ["A", "B"])
     
     # 5.1 Неправильный индекс
     try:
         table.get_rows_by_number(10)
-        print("  ❌ Должна быть ошибка индекса")
+        print("Должна быть ошибка индекса")
         return False
     except Exception:
-        print("  ✓ Ошибка индекса обработана")
+        print("Ошибка индекса обработана")
     
     # 5.2 Неправильная колонка
     try:
         table.get_values("NonExistent")
-        print("  ❌ Должна быть ошибка колонки")
+        print("Должна быть ошибка колонки")
         return False
     except Exception:
-        print("  ✓ Ошибка колонки обработана")
+        print("Ошибка колонки обработана")
     
     # 5.3 Неправильный тип
     try:
         table.set_column_types({"A": "invalid_type"})
-        print("  ❌ Должна быть ошибка типа")
+        print("Должна быть ошибка типа")
         return False
     except Exception:
-        print("  ✓ Ошибка типа обработана")
+        print("Ошибка типа обработана")
     
     # 5.4 Неправильное количество значений
     try:
         table.set_values([1, 2, 3], "A")  # 3 значения для 1 строки
-        print("  ❌ Должна быть ошибка количества")
+        print("Должна быть ошибка количества")
         return False
     except Exception:
-        print("  ✓ Ошибка количества обработана")
+        print("Ошибка количества обработана")
     
     return True
 
 def test_datetime():
     """Тест 6: Дата и время"""
-    print("✓ Тест 6: Дата и время")
+    print("Тест 6: Дата и время")
     
     data = [
         [1, "Event 1", "2023-12-25", "2023-12-25 10:30:00"],
@@ -243,10 +243,10 @@ def run_all_tests():
     print(f"ИТОГ: {passed} пройдено, {failed} упало")
     
     if failed == 0:
-        print("✅ ВСЕ ТЕСТЫ ПРОЙДЕНЫ УСПЕШНО!")
+        print("ВСЕ ТЕСТЫ ПРОЙДЕНЫ УСПЕШНО!")
         return True
     else:
-        print("❌ ЕСТЬ ПРОБЛЕМЫ!")
+        print("ЕСТЬ ПРОБЛЕМЫ!")
         return False
 
 if __name__ == "__main__":
